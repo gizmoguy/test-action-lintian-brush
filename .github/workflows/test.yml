@@ -3,7 +3,7 @@ name: Lintian-brush
 on: push
     
 jobs:
-  renovate:
+  lintian-brush:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
