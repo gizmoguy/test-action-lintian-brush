@@ -1,4 +1,4 @@
-name: Renovate
+name: Lintian-brush
 
 on: push
     
@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Create Pull Request
+      - name: Run lintian-brush
         uses: gizmoguy/action-lintian-brush@v1
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
