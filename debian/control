@@ -2,14 +2,13 @@ Source: faucet
 Section: python
 Priority: optional
 Maintainer: Faucet Maintainers <maintainers@faucet.nz>
-Build-Depends: debhelper (>=9),
-               dh-systemd (>= 1.5),
+Build-Depends: debhelper (>= 9.20160709),
                dh-python,
                git,
                python3-pkg-resources,
                python3-all,
                python3-setuptools,
-               python3-pbr (>=1.9),
+               python3-pbr (>= 1.9),
                python3-bitstring,
                python3-influxdb,
                python3-msgpack (>= 0.4.6), python3-msgpack (<< 1.0.0),
