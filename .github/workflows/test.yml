@@ -6,12 +6,10 @@ jobs:
   lintian-brush:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: debug
-        run: |
-          ls -al
       - name: Run lintian-brush
         uses: gizmoguy/action-lintian-brush@v1
         with:
