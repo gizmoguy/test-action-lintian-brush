@@ -9,5 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run lintian-brush
         uses: gizmoguy/action-lintian-brush@v1
+        with:
+          modern: true
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
