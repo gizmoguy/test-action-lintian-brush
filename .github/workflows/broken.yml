@@ -19,7 +19,7 @@ jobs:
         with:
           directory: ./debian-nonexistent/
           git-user-name: GitHub
-          git-email-address: noreply@github.com
+          git-user-email: noreply@github.com
           no-update-changelog: true
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
