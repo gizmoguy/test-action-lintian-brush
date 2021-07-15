@@ -17,7 +17,7 @@ jobs:
       - name: Run lintian-brush
         uses: gizmoguy/action-lintian-brush@v1
         with:
-          directory: ./debian-nonexistent/
+          directory: ./debian/
           git-user-name: GitHub
           git-user-email: noreply@github.com
           no-update-changelog: true
