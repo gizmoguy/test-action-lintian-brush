@@ -1,0 +1,16 @@
+name: Blah
+
+on: push
+
+jobs:
+  blah:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: |
+          echo "blah" > ./test-file
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
