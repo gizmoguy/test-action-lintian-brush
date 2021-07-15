@@ -10,6 +10,6 @@ jobs:
       - name: Run lintian-brush
         uses: gizmoguy/action-lintian-brush@v1
         with:
-          modern: True
+          no_update_changelog: true
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
