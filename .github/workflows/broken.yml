@@ -1,0 +1,32 @@
+name: Lintian-brush
+
+on:
+  schedule:
+    # The "*" (#42, asterisk) character has special semantics in YAML, so this
+    # string has to be quoted.
+    - cron: '0/15 * * * *'
+
+jobs:
+  lintian-brush:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run lintian-brush
+        uses: gizmoguy/action-lintian-brush@v1
+        with:
+          directory: ./debian-nonexistent/
+          git-user-name: GitHub
+          git-email-address: noreply@github.com
+          no-update-changelog: true
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: lintian-brush/patch
+          title: 'Update debian packaging'
+          body: |
+            Automated changes by [lintian-brush][1]
+
+            [1]: https://salsa.debian.org/jelmer/lintian-brush
