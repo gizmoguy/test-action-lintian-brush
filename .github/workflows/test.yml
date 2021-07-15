@@ -17,7 +17,10 @@ jobs:
       - name: Run lintian-brush
         uses: gizmoguy/action-lintian-brush@v1
         with:
-          no_update_changelog: true
+          directory: ./debian/
+          git-user-name: GitHub
+          git-email-address: noreply@github.com
+          no-update-changelog: true
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
