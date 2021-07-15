@@ -1,6 +1,8 @@
 name: Blah
 
-on: push
+on:
+  schedule:
+    - cron: '20 * * * *'
 
 jobs:
   blah:
