@@ -2,14 +2,13 @@ Source: faucet
 Section: python
 Priority: optional
 Maintainer: Faucet Maintainers <maintainers@faucet.nz>
-Build-Depends: debhelper (>=9),
-               dh-systemd (>= 1.5),
+Build-Depends: debhelper-compat (= 13),
                dh-python,
                git,
                python3-pkg-resources,
                python3-all,
                python3-setuptools,
-               python3-pbr (>=1.9),
+               python3-pbr (>= 1.9),
                python3-bitstring,
                python3-influxdb,
                python3-msgpack (>= 0.4.6), python3-msgpack (<< 1.0.0),
@@ -23,7 +22,6 @@ Build-Depends: debhelper (>=9),
                python3-pytricia,
 Standards-Version: 3.9.6
 Homepage: https://github.com/faucetsdn/faucet
-X-Python3-Version: >= 3.4
 Vcs-Git: https://github.com/faucetsdn/faucet.git
 Vcs-Browser: https://github.com/faucetsdn/faucet
 
@@ -41,6 +39,7 @@ Depends: python3-influxdb (>= 2.12.0),
          python3-chewie (>= 0.0.22), python3-chewie (<< 0.0.23),
          python3-pytricia (>= 1.0.0),
          python3:any (>= 3.5~),
+         ${misc:Depends},
 Suggests: python-faucet-doc, faucet, gauge
 Description: source code for faucet and gauge (Python3)
  Python3 library that contains the source code for the Faucet open source
@@ -52,6 +51,7 @@ Package: faucet
 Architecture: all
 Depends: adduser,
          python3-faucet (>= 1.9.0),
+         ${misc:Depends},
 Suggests: gauge
 Description: This is a compact open source OpenFlow controller (Python 3)
  This is a compact open source OpenFlow controller, which enables network
@@ -67,6 +67,7 @@ Package: gauge
 Architecture: all
 Depends: adduser,
          python3-faucet (>= 1.9.0),
+         ${misc:Depends},
 Suggests: python-faucet-doc, faucet
 Description: This is a component the Faucet OpenFlow controller (Python 3)
  This is a component of the Faucet OpenFlow controller,
@@ -82,6 +83,7 @@ Depends: faucet (>= 1.9.0),
          python3-faucet (>= 1.9.0),
          prometheus (>= 2.0.0),
          grafana,
+         ${misc:Depends},
 Suggests: python-faucet-doc
 Description: Metapackage to install all the component of faucet (Python 3)
  includes python3-faucet, faucet, gauge, grafana
