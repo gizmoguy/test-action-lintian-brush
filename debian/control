@@ -39,6 +39,7 @@ Depends: python3-influxdb (>= 2.12.0),
          python3-chewie (>= 0.0.22), python3-chewie (<< 0.0.23),
          python3-pytricia (>= 1.0.0),
          python3:any (>= 3.5~),
+         ${misc:Depends},
 Suggests: python-faucet-doc, faucet, gauge
 Description: source code for faucet and gauge (Python3)
  Python3 library that contains the source code for the Faucet open source
@@ -50,6 +51,7 @@ Package: faucet
 Architecture: all
 Depends: adduser,
          python3-faucet (>= 1.9.0),
+         ${misc:Depends},
 Suggests: gauge
 Description: This is a compact open source OpenFlow controller (Python 3)
  This is a compact open source OpenFlow controller, which enables network
@@ -65,6 +67,7 @@ Package: gauge
 Architecture: all
 Depends: adduser,
          python3-faucet (>= 1.9.0),
+         ${misc:Depends},
 Suggests: python-faucet-doc, faucet
 Description: This is a component the Faucet OpenFlow controller (Python 3)
  This is a component of the Faucet OpenFlow controller,
@@ -80,6 +83,7 @@ Depends: faucet (>= 1.9.0),
          python3-faucet (>= 1.9.0),
          prometheus (>= 2.0.0),
          grafana,
+         ${misc:Depends},
 Suggests: python-faucet-doc
 Description: Metapackage to install all the component of faucet (Python 3)
  includes python3-faucet, faucet, gauge, grafana
